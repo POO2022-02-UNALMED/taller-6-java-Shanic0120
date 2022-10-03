@@ -35,7 +35,11 @@ public class Fabricante {
 	public static Fabricante fabricaMayorVentas() {
 		Fabricante fabricante = null;
 		for (Fabricante f : fabricantes) {
-			if (f.frecuencia > fabricante.frecuencia || fabricante == null) {
+			try {
+				if (f.frecuencia > fabricante.frecuencia) {
+					fabricante = f;
+				}
+			} catch (Exception e) {
 				fabricante = f;
 			}
 		}

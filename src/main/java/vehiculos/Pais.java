@@ -23,9 +23,14 @@ public class Pais {
 	public static Pais paisMasVendedor() {
 		Pais pais = null;
 		for (Pais p : paises) {
-			if (p.frecuencia > pais.frecuencia || pais == null) {
+			try {
+				if (p.frecuencia > pais.frecuencia) {
+					pais = p;
+				}
+			} catch (Exception e) {
 				pais = p;
 			}
+
 		}
 		return pais;
 	}
